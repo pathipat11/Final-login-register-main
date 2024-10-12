@@ -1,0 +1,66 @@
+.navbar {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #075150;  /* Healthcare green */
+  }
+  
+  .logo {
+    font-size: 1.5rem;
+    color: white;
+    font-weight: bold;
+  }
+  
+  .navLinks {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+  }
+  
+  .navLinks li a {
+    text-decoration: none;
+    color: white;
+    font-size: 1.1rem;
+  }
+  
+  .navLinks li a:hover {
+    color: #c8e6c9;  /* Lighter green hover effect */
+  }
+  
+  .userEmail {
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+    margin-right: 15px;
+  }
+  
+  .logoutButton {
+    background-color: #e53935;  /* Red for logout button */
+    color: white;
+    text-align: center;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .logoutButton:hover {
+    background-color: #d32f2f;
+  }
+  .warning {
+    color: #d32f2f;
+    background-color: #ffebee;
+    padding: 10px;
+    margin-top: 20px;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 1rem;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    top: 20px; /* ระยะห่างจากด้านบนเพื่อให้แสดงผลด้านล่าง navbar */
+  }
