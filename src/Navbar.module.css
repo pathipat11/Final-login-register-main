@@ -1,55 +1,95 @@
+/* Navbar styles */
 .navbar {
-    font-family: Arial, sans-serif;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px;
-    background-color: #075150;  /* Healthcare green */
-  }
-  
-  .logo {
-    font-size: 1.5rem;
-    color: white;
-    font-weight: bold;
-  }
-  
-  .navLinks {
-    list-style: none;
-    display: flex;
-    gap: 15px;
-  }
-  
-  .navLinks li a {
-    text-decoration: none;
-    color: white;
-    font-size: 1.1rem;
-  }
-  
-  .navLinks li a:hover {
-    color: #c8e6c9;  /* Lighter green hover effect */
-  }
-  
-  .userEmail {
-    color: white;
-    font-size: 1rem;
-    font-weight: bold;
-    margin-right: 15px;
-  }
-  
-  .logoutButton {
-    background-color: #e53935;  /* Red for logout button */
-    color: white;
-    text-align: center;
-    border: none;
-    padding: 8px 16px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-  }
-  
-  .logoutButton:hover {
-    background-color: #d32f2f;
-  }
+  background-color: #005150; /* สีหลักของ Navbar */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 3px 7px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* เพิ่มเงาเล็กน้อย */
+}
+.logo {
+  width: 150px;
+  height: 80px;
+  background-image: url('../src/image/logo6.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  /* เพิ่มเงาเพื่อให้ดูมีมิติ */
+  /* box-shadow: 0px 4px 10px rgba(200, 198, 198, 0.3);  */
+}
+
+
+
+.navLinks {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+.navLinks li {
+  margin-left: 20px;
+}
+
+/* ลิงก์ทั่วไป */
+.link {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+.link:hover {
+  color: #f4f4f4;
+}
+
+/* ปุ่ม login และ register */
+.login, .register {
+  color: #ffffff;
+  background-color: transparent;
+  border: 2px solid #ffffff;
+  text-decoration: none;
+  padding: 10px 20px;
+  font-size: 1.1rem;
+  border-radius: 8px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  font-weight: bold;
+}
+
+.login:hover, .register:hover {
+  background-color: #ffffff;
+  color: #1abc9c;
+}
+
+.userEmail {
+  color: #ffffff;
+  font-size: 1rem;
+  margin-right: 15px;
+}
+
+.logoutButton {
+  background-color: #f12222;
+  color: #d6e5e2;
+  border: none;
+  padding: 10px 10px;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.logoutButton:hover {
+  background-color: #e94747;
+  color: #000000;
+}
+
+
   .warning {
     color: #d32f2f;
     background-color: #ffebee;

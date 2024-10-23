@@ -1,5 +1,7 @@
-import Link from 'next/link';
+import Link from '../node_modules/next/link';
 import { useEffect, useState } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSignInAlt, faUserPlus, faSignOutAlt, faUser } from '@fortawesome/free-solid-svg-icons';
 import styles from './Navbar.module.css';
 
 const Navbar = () => {
@@ -9,8 +11,6 @@ const Navbar = () => {
   useEffect(() => {
     const token = localStorage.getItem('token');
     if (token) {
-      // Assuming the email is stored in the token payload or retrieved separately
-      // Here we mock getting email from the token or another source
       const storedEmail = localStorage.getItem('userEmail'); // Assuming userEmail is stored
       setUserEmail(storedEmail); // Set email to be displayed
     }
@@ -25,23 +25,35 @@ const Navbar = () => {
 
   return (
     <nav className={styles.navbar}>
-      <div className={styles.logo}>Balance Care</div>
+      <Link href={userEmail ? "/dashboard" : "/"} className={styles.link}>
+        <div className={styles.logo}></div>
+      </Link>
       <ul className={styles.navLinks}>
-        <li><Link href="/">หน้าหลัก</Link></li>
-
         {userEmail ? (
           <>
             <li>
-              <span className={styles.userEmail}>สวัสดีคุณ {userEmail}</span>
+              <span className={styles.userEmail}>
+                <FontAwesomeIcon icon={faUser} /> สวัสดีคุณ {userEmail}
+              </span>
             </li>
             <li>
-              <button onClick={handleLogout} className={styles.logoutButton}>ออกจากระบบ</button>
+              <button onClick={handleLogout} className={styles.logoutButton}>
+                <FontAwesomeIcon icon={faSignOutAlt} /> ออกจากระบบ
+              </button>
             </li>
           </>
         ) : (
           <>
-            <li ><Link className='login' href="/login">เข้าสู่ระบบ</Link></li>
-            <li ><Link className='register' href="/register">สมัครสมาชิก</Link></li>
+            <li>
+              <Link className={styles.login} href="/login">
+                <FontAwesomeIcon icon={faSignInAlt} /> เข้าสู่ระบบ
+              </Link>
+            </li>
+            <li>
+              <Link className={styles.register} href="/register">
+                <FontAwesomeIcon icon={faUserPlus} /> สมัครสมาชิก
+              </Link>
+            </li>
           </>
         )}
       </ul>

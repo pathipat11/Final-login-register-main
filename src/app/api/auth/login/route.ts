@@ -10,7 +10,9 @@ export async function POST(request: Request) {
       console.log('MongoDB connected');
   
       const { email, password } = await request.json();
-      console.log('Received email and password:', { email, password });
+        console.log('Received email and password:', { email, password });
+
+
   
       // ตรวจสอบว่าผู้ใช้งานมีอยู่ในระบบหรือไม่
       const user = await User.findOne({ email });
@@ -19,7 +21,7 @@ export async function POST(request: Request) {
         return NextResponse.json({ message: 'User not found' }, { status: 400 });
       }
   
-      console.log('User found:', user);
+      console.log('User found:');
   
       // ตรวจสอบรหัสผ่าน
       const isPasswordValid = await bcrypt.compare(password, user.password);
